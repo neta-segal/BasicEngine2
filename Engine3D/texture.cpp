@@ -10,7 +10,7 @@ Texture::Texture(const std::string& fileName)
 {
 	int width, height, numComponents;
     unsigned char* data = stbi_load((fileName).c_str(), &width, &height, &numComponents, 4);
-	
+
     if(data == NULL)
 		std::cerr << "Unable to load texture: " << fileName << std::endl;
         
@@ -29,6 +29,7 @@ Texture::Texture(const std::string& fileName)
 
 Texture::Texture(int width,int height,unsigned char *data)
 {
+
     glGenTextures(1, &m_texture);
     Bind(m_texture);
         
